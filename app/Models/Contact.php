@@ -1,0 +1,44 @@
+<?php
+
+namespace App\Models;
+
+use Database\Factories\ContactFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+
+class Contact extends Model
+{
+    /** @use HasFactory<ContactFactory> */
+    use HasFactory;
+
+    protected $fillable = ['email', 'unsubscribed'];
+
+    /**
+     * Get the lists that this contact is subscribed to.
+     *
+     * @return BelongsToMany<MailList, $this>
+     */
+    public function lists(): BelongsToMany
+    {
+        return $this->belongsToMany(MailList::class)->withTimestamps();
+    }
+
+    /**
+     * Unsubscribe a contact in the system.
+     */
+    public function markUnsubscribed(): void
+    {
+        $this->update(['unsubscribed' => true]);
+        $this->lists()->detach();
+    }
+
+    /**
+     * Delete this contact along with any relations.
+     */
+    public function deleteWithRelations(): void
+    {
+        $this->lists()->detach();
+        $this->delete();
+    }
+}

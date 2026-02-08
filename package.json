@@ -1,0 +1,17 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "cross-env NODE_ENV=development postcss ./resources/css/app.css -o ./public/css/app.css -w",
+        "livereload": "livereload ./resources -w 200",
+        "build": "cross-env NODE_ENV=production postcss ./resources/css/app.css -o ./public/css/app.css"
+    },
+    "devDependencies": {
+        "@tailwindcss/forms": "^0.5.10",
+        "@tailwindcss/postcss": "^4.0.9",
+        "cross-env": "^7.0.3",
+        "livereload": "^0.9.3",
+        "postcss": "^8.5",
+        "postcss-cli": "^11.0.0",
+        "tailwindcss": "^4.0.9"
+    }
+}
