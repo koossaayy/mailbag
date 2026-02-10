@@ -3,7 +3,7 @@
 
     <div class="container">
 
-        <x-subheading>Details</x-subheading>
+        <x-subheading>{{ __('Details') }}</x-subheading>
 
         <form action="{{ route('sends.update', ['send' => $send]) }}" method="post" id="send-form">
             {{ method_field('put') }}
@@ -14,11 +14,11 @@
         </form>
 
         <div class="pt-10 text-right">
-            <x-button-secondary-link href="{{ route('sends.show', compact('send')) }}" class="mr-1">Cancel</x-button-secondary-link>
+            <x-button-secondary-link href="{{ route('sends.show', compact('send')) }}" class="mr-1">{{ __('Cancel') }}</x-button-secondary-link>
             <x-delete-dropdown :route="route('sends.destroy', ['send' => $send])">
-                Are you sure you want to delete this send?
+                {{ __('Are you sure you want to delete this send?') }}
             </x-delete-dropdown>
-            <x-button form="send-form">Save</x-button>
+            <x-button form="send-form">{{ __('Save') }}</x-button>
         </div>
 
         @include('sends.content-syntax')

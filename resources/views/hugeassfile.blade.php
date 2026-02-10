@@ -74,39 +74,39 @@
     <section class="conditionals">
         {{-- Basic if/else --}}
         @if ($userRole === 'admin')
-            <div class="admin-panel">Admin Access Granted</div>
+            <div class="admin-panel">{{ __('Admin Access Granted') }}</div>
         @elseif ($userRole === 'editor')
-            <div class="editor-panel">Editor Access</div>
+            <div class="editor-panel">{{ __('Editor Access') }}</div>
         @else
-            <div class="user-panel">Standard User</div>
+            <div class="user-panel">{{ __('Standard User') }}</div>
         @endif
 
         {{-- Unless (inverse of if) --}}
         @unless ($isBlocked)
-            <p>You can access this content</p>
+            <p>{{ __('You can access this content') }}</p>
         @endunless
 
         {{-- Isset and empty --}}
         @isset($userName)
-            <p>User: {{ $userName }}</p>
+            <p>{{ __('User:') }} {{ $userName }}</p>
         @endisset
 
         @empty($posts)
-            <p>No posts available</p>
+            <p>{{ __('No posts available') }}</p>
         @endempty
 
         {{-- Authentication directives --}}
         @auth
-            <a href="/dashboard">Dashboard</a>
+            <a href="/dashboard">{{ __('Dashboard') }}</a>
         @endauth
 
         @guest
-            <a href="/login">Login</a>
+            <a href="/login">{{ __('Login') }}</a>
         @endguest
 
         {{-- Specific guard authentication --}}
         @auth('admin')
-            <a href="/admin">Admin Panel</a>
+            <a href="/admin">{{ __('Admin Panel') }}</a>
         @endauth
 
         {{-- Environment checks --}}
@@ -115,7 +115,7 @@
         @endproduction
 
         @env('local')
-            <div class="debug-bar">Debug Mode</div>
+            <div class="debug-bar">{{ __('Debug Mode') }}</div>
         @endenv
 
         @env(['staging', 'production'])
@@ -126,12 +126,12 @@
         @hasSection('navigation')
             <nav>@yield('navigation')</nav>
         @else
-            <nav>Default Navigation</nav>
+            <nav>{{ __('Default Navigation') }}</nav>
         @endhasSection
 
         {{-- Section missing --}}
         @sectionMissing('sidebar')
-            <aside>Default Sidebar</aside>
+            <aside>{{ __('Default Sidebar') }}</aside>
         @endif
     </section>
 
@@ -142,19 +142,19 @@
 
     <section class="authorization">
         @can('update', $post)
-            <button>Edit Post</button>
+            <button>{{ __('Edit Post') }}</button>
         @elsecan('delete', $post)
-            <button>Delete Post</button>
+            <button>{{ __('Delete Post') }}</button>
         @else
-            <p>No permissions</p>
+            <p>{{ __('No permissions') }}</p>
         @endcan
 
         @cannot('delete', $post)
-            <p>You cannot delete this post</p>
+            <p>{{ __('You cannot delete this post') }}</p>
         @endcannot
 
         @canany(['update', 'delete'], $post)
-            <div class="post-actions">Post Actions Available</div>
+            <div class="post-actions">{{ __('Post Actions Available') }}</div>
         @endcanany
     </section>
 
@@ -164,7 +164,7 @@
     ============================================ --}}
 
     <section class="loops">
-        <h2>Posts</h2>
+        <h2>{{ __('Posts') }}</h2>
 
         {{-- Foreach loop --}}
         @foreach ($posts as $post)
@@ -174,7 +174,7 @@
 
                 {{-- Loop variable --}}
                 <small>
-                    Item {{ $loop->iteration }} of {{ $loop->count }}
+                    {{ __('Item') }} {{ $loop->iteration }} {{ __('of') }} {{ $loop->count }}
                     @if ($loop->first)
                         (First)
                     @endif
@@ -193,7 +193,7 @@
         @forelse ($comments as $comment)
             <div class="comment">{{ $comment->body }}</div>
         @empty
-            <p>No comments yet. Be the first to comment!</p>
+            <p>{{ __('No comments yet. Be the first to comment!') }}</p>
         @endforelse
 
         {{-- For loop --}}
@@ -204,7 +204,7 @@
         {{-- While loop --}}
         @php $counter = 0; @endphp
         @while ($counter < 5)
-            <div>Count: {{ $counter }}</div>
+            <div>{{ __('Count:') }} {{ $counter }}</div>
             @php $counter++; @endphp
         @endwhile
 
@@ -241,28 +241,28 @@
 
         {{-- Component with slot --}}
         <x-card title="User Profile">
-            <p>This content goes into the default slot</p>
+            <p>{{ __('This content goes into the default slot') }}</p>
         </x-card>
 
         {{-- Component with named slots --}}
         <x-modal>
             <x-slot:title>
-                Confirm Action
+                {{ __('Confirm Action') }}
             </x-slot>
 
             <x-slot:body>
-                Are you sure you want to proceed?
+                {{ __('Are you sure you want to proceed?') }}
             </x-slot>
 
             <x-slot:footer>
-                <button>Cancel</button>
-                <button>Confirm</button>
+                <button>{{ __('Cancel') }}</button>
+                <button>{{ __('Confirm') }}</button>
             </x-slot>
         </x-modal>
 
         {{-- Component with attributes --}}
         <x-button type="submit" color="primary" ::class="{ 'opacity-50': processing }" wire:click="save">
-            Save Changes
+            {{ __('Save Changes') }}
         </x-button>
 
         {{-- Dynamic component --}}
@@ -278,7 +278,7 @@
     ============================================ --}}
 
     <section class="livewire-section">
-        <h2>Livewire Components</h2>
+        <h2>{{ __('Livewire Components') }}</h2>
 
         {{-- Basic Livewire component --}}
         @livewire('counter')
@@ -301,26 +301,26 @@
         <div>
             <!-- Livewire content with wire directives -->
             <input type="text" wire:model.live="searchTerm">
-            <button wire:click="search">Search</button>
-            <div wire:loading>Searching...</div>
-            <div wire:loading.remove>Results ready</div>
+            <button wire:click="search">{{ __('Search') }}</button>
+            <div wire:loading>{{ __('Searching...') }}</div>
+            <div wire:loading.remove>{{ __('Results ready') }}</div>
 
             <!-- Wire directives examples -->
             <form wire:submit.prevent="save">
                 <input type="text" wire:model.defer="name">
                 <input type="email" wire:model.blur="email">
                 <input type="number" wire:model.debounce.500ms="quantity">
-                <button type="submit" wire:loading.attr="disabled">Save</button>
+                <button type="submit" wire:loading.attr="disabled">{{ __('Save') }}</button>
             </form>
 
             <!-- Wire target -->
             <button wire:click="delete" wire:loading.class="opacity-50" wire:target="delete">
-                Delete
+                {{ __('Delete') }}
             </button>
 
             <!-- Wire poll -->
             <div wire:poll.5s>
-                Updated every 5 seconds: {{ now() }}
+                {{ __('Updated every 5 seconds:') }} {{ now() }}
             </div>
 
             <!-- Wire ignore -->
@@ -390,8 +390,8 @@
     @inject('metrics', 'App\Services\MetricsService')
 
     <div class="metrics">
-        <p>Total Users: {{ $metrics->getTotalUsers() }}</p>
-        <p>Active Sessions: {{ $metrics->getActiveSessions() }}</p>
+        <p>{{ __('Total Users:') }} {{ $metrics->getTotalUsers() }}</p>
+        <p>{{ __('Active Sessions:') }} {{ $metrics->getActiveSessions() }}</p>
     </div>
 
 
@@ -406,9 +406,9 @@
     @endphp
 
     <div class="price-summary">
-        <p>Subtotal: ${{ number_format($calculatedValue, 2) }}</p>
-        <p>Discount: ${{ number_format($discount, 2) }}</p>
-        <p>Total: ${{ number_format($finalPrice, 2) }}</p>
+        <p>{{ __('Subtotal: $') }}{{ number_format($calculatedValue, 2) }}</p>
+        <p>{{ __('Discount: $') }}{{ number_format($discount, 2) }}</p>
+        <p>{{ __('Total: $') }}{{ number_format($finalPrice, 2) }}</p>
     </div>
 
 
@@ -424,7 +424,7 @@
             @method('PUT')
 
             <div class="form-group">
-                <label for="title">Title</label>
+                <label for="title">{{ __('Title') }}</label>
                 <input type="text" id="title" name="title" value="{{ old('title', $post->title ?? '') }}"
                     class="@error('title') is-invalid @enderror">
 
@@ -435,7 +435,7 @@
             </div>
 
             <div class="form-group">
-                <label for="category">Category</label>
+                <label for="category">{{ __('Category') }}</label>
                 <select name="category_id" id="category">
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}" @selected(old('category_id', $post->category_id ?? null) == $category->id)>
@@ -448,28 +448,28 @@
             <div class="form-group">
                 <label>
                     <input type="checkbox" name="featured" value="1" @checked(old('featured', $post->featured ?? false))>
-                    Featured Post
+                    {{ __('Featured Post') }}
                 </label>
             </div>
 
             <div class="form-group">
-                <label>Status</label>
+                <label>{{ __('Status') }}</label>
                 <label>
                     <input type="radio" name="status" value="draft" @checked(old('status', $post->status ?? 'draft') === 'draft')>
-                    Draft
+                    {{ __('Draft') }}
                 </label>
                 <label>
                     <input type="radio" name="status" value="published" @checked(old('status', $post->status ?? 'draft') === 'published')>
-                    Published
+                    {{ __('Published') }}
                 </label>
             </div>
 
             <div class="form-group">
-                <label for="body">Content</label>
+                <label for="body">{{ __('Content') }}</label>
                 <textarea name="body" id="body" rows="10" @disabled($isReadOnly ?? false) @readonly($isArchived ?? false) @required>{{ old('body', $post->body ?? '') }}</textarea>
             </div>
 
-            <button type="submit">Submit</button>
+            <button type="submit">{{ __('Submit') }}</button>
         </form>
 
         {{-- All validation errors --}}
@@ -514,17 +514,17 @@
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
         {{-- Named routes --}}
-        <a href="{{ route('posts.index') }}">All Posts</a>
-        <a href="{{ route('posts.show', $post) }}">View Post</a>
-        <a href="{{ route('posts.edit', ['post' => $post->id, 'source' => 'dashboard']) }}">Edit</a>
+        <a href="{{ route('posts.index') }}">{{ __('All Posts') }}</a>
+        <a href="{{ route('posts.show', $post) }}">{{ __('View Post') }}</a>
+        <a href="{{ route('posts.edit', ['post' => $post->id, 'source' => 'dashboard']) }}">{{ __('Edit') }}</a>
 
         {{-- URL generation --}}
-        <a href="{{ url('/about') }}">About</a>
-        <a href="{{ secure_url('/checkout') }}">Checkout</a>
+        <a href="{{ url('/about') }}">{{ __('About') }}</a>
+        <a href="{{ secure_url('/checkout') }}">{{ __('Checkout') }}</a>
 
         {{-- Current URL checks --}}
-        <li class="@if (request()->routeIs('posts.*')) active @endif">Posts</li>
-        <li class="{{ request()->is('admin/*') ? 'active' : '' }}">Admin</li>
+        <li class="@if (request()->routeIs('posts.*')) active @endif">{{ __('Posts') }}</li>
+        <li class="{{ request()->is('admin/*') ? 'active' : '' }}">{{ __('Admin') }}</li>
     </section>
 
 
@@ -539,7 +539,7 @@
         @currency($product->price)
 
         @role('admin')
-            <div>Admin-only content</div>
+            <div>{{ __('Admin-only content') }}</div>
         @endrole
     </section>
 
@@ -551,37 +551,37 @@
     <main>
         <article>
             <header>
-                <h1>Article Title</h1>
-                <time datetime="2024-01-15">January 15, 2024</time>
+                <h1>{{ __('Article Title') }}</h1>
+                <time datetime="2024-01-15">{{ __('January 15, 2024') }}</time>
             </header>
 
             <section>
-                <h2>Section Heading</h2>
-                <p>Content here...</p>
+                <h2>{{ __('Section Heading') }}</h2>
+                <p>{{ __('Content here...') }}</p>
 
                 <figure>
                     <img src="image.jpg" alt="Description">
-                    <figcaption>Image caption</figcaption>
+                    <figcaption>{{ __('Image caption') }}</figcaption>
                 </figure>
             </section>
 
             <aside>
-                <h3>Related Information</h3>
-                <p>Sidebar content</p>
+                <h3>{{ __('Related Information') }}</h3>
+                <p>{{ __('Sidebar content') }}</p>
             </aside>
 
             <footer>
-                <p>Article footer</p>
+                <p>{{ __('Article footer') }}</p>
             </footer>
         </article>
     </main>
 
     <footer class="site-footer">
         <nav>
-            <a href="/privacy">Privacy</a>
-            <a href="/terms">Terms</a>
+            <a href="/privacy">{{ __('Privacy') }}</a>
+            <a href="/terms">{{ __('Terms') }}</a>
         </nav>
-        <p>&copy; {{ date('Y') }} {{ config('app.name') }}</p>
+        <p>{{ __('&copy;') }} {{ date('Y') }} {{ config('app.name') }}</p>
     </footer>
 
 

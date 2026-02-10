@@ -23,7 +23,7 @@
     <x-label for="password" value="Password" />
     @if($user->id)
         <p class="text-sm mb-1 text-gray-600">
-            Leave this blank to not change the password.
+            {{ __('Leave this blank to not change the password.') }}
         </p>
     @endif
     <x-input id="password" class="block mt-1 w-full" type="password" name="password" :value="old('password') ?? ''"/>

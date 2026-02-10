@@ -3,7 +3,7 @@
 
     <div class="container">
 
-        <x-subheading>Details</x-subheading>
+        <x-subheading>{{ __('Details') }}</x-subheading>
 
         <form action="{{ route('campaigns.update', ['campaign' => $campaign]) }}" method="post" id="campaign-form">
             {{ method_field('put') }}
@@ -14,11 +14,11 @@
         </form>
 
         <div class="pt-10 text-right">
-            <x-button-secondary-link href="{{ route('campaigns.show', compact('campaign')) }}" class="mr-1">Cancel</x-button-secondary-link>
+            <x-button-secondary-link href="{{ route('campaigns.show', compact('campaign')) }}" class="mr-1">{{ __('Cancel') }}</x-button-secondary-link>
             <x-delete-dropdown :route="route('campaigns.destroy', ['campaign' => $campaign])">
-                Are you sure you want to delete this campaign? All feeds and sends will also be deleted.
+                {{ __('Are you sure you want to delete this campaign? All feeds and sends will also be deleted.') }}
             </x-delete-dropdown>
-            <x-button form="campaign-form">Save</x-button>
+            <x-button form="campaign-form">{{ __('Save') }}</x-button>
         </div>
 
     </div>

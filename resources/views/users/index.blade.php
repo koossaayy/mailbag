@@ -9,7 +9,7 @@
                 <x-search-input/>
             </div>
             <div class="flex-auto px-5 text-right">
-                <x-button-secondary-link :href="route('users.create')">Create New</x-button-secondary-link>
+                <x-button-secondary-link :href="route('users.create')">{{ __('Create New') }}</x-button-secondary-link>
             </div>
         </div>
 
@@ -25,7 +25,7 @@
                         </a>
                     </td>
                     <td class="table-cell text-sm text-right font-medium">
-                        <a href="{{ route('users.edit', ['user' => $user]) }}" class="link">Edit</a>
+                        <a href="{{ route('users.edit', ['user' => $user]) }}" class="link">{{ __('Edit') }}</a>
                     </td>
                 </tr>
             @endforeach

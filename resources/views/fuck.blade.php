@@ -55,7 +55,7 @@
         @switch($userRole)
             @case('admin')
                 <div class="admin-dashboard">
-                    <h1>Admin Dashboard</h1>
+                    <h1>{{ __('Admin Dashboard') }}</h1>
                     @include('admin.widgets')
                 </div>
             @break
@@ -63,20 +63,20 @@
             @case('moderator')
             @case('editor')
                 <div class="content-management">
-                    <h1>Content Management</h1>
+                    <h1>{{ __('Content Management') }}</h1>
                     @include('editor.tools')
                 </div>
             @break
 
             @case('subscriber')
                 <div class="subscriber-area">
-                    <h1>Premium Content</h1>
+                    <h1>{{ __('Premium Content') }}</h1>
                 </div>
             @break
 
             @default
                 <div class="public-view">
-                    <h1>Welcome</h1>
+                    <h1>{{ __('Welcome') }}</h1>
                 </div>
         @endswitch
 
@@ -85,7 +85,7 @@
             @if (auth()->user()->hasSubscription())
                 @if (auth()->user()->subscription->isActive())
                     <div class="premium-content">
-                        <h2>Premium Features</h2>
+                        <h2>{{ __('Premium Features') }}</h2>
                         @if (auth()->user()->subscription->plan === 'enterprise')
                             @include('features.enterprise')
                         @else
@@ -94,23 +94,23 @@
                     </div>
                 @else
                     <div class="subscription-expired">
-                        <p>Your subscription has expired. <a href="{{ route('renew') }}">Renew now</a></p>
+                        <p>{{ __('Your subscription has expired.') }} <a href="{{ route('renew') }}">{{ __('Renew now') }}</a></p>
                     </div>
                 @endif
             @else
                 <div class="upgrade-prompt">
-                    <h3>Unlock Premium Features</h3>
-                    <a href="{{ route('subscribe') }}" class="btn-premium">Upgrade Now</a>
+                    <h3>{{ __('Unlock Premium Features') }}</h3>
+                    <a href="{{ route('subscribe') }}" class="btn-premium">{{ __('Upgrade Now') }}</a>
                 </div>
             @endif
         @elseif(auth()->check())
             <div class="verify-email-notice">
-                <p>Please verify your email to access all features.</p>
+                <p>{{ __('Please verify your email to access all features.') }}</p>
             </div>
         @else
             <div class="auth-prompt">
-                <a href="{{ route('login') }}">Login</a> or
-                <a href="{{ route('register') }}">Sign Up</a>
+                <a href="{{ route('login') }}">{{ __('Login') }}</a> {{ __('or') }}
+                <a href="{{ route('register') }}">{{ __('Sign Up') }}</a>
             </div>
         @endif
 
@@ -131,11 +131,11 @@
 
         @env('local')
             <div class="debug-toolbar">
-                <strong>Local Development Mode</strong>
+                <strong>{{ __('Local Development Mode') }}</strong>
                 <ul>
-                    <li>Route: {{ Route::currentRouteName() }}</li>
-                    <li>Memory: {{ round(memory_get_usage() / 1024 / 1024, 2) }} MB</li>
-                    <li>Queries: {{ count(DB::getQueryLog()) }}</li>
+                    <li>{{ __('Route:') }} {{ Route::currentRouteName() }}</li>
+                    <li>{{ __('Memory:') }} {{ round(memory_get_usage() / 1024 / 1024, 2) }} {{ __('MB') }}</li>
+                    <li>{{ __('Queries:') }} {{ count(DB::getQueryLog()) }}</li>
                 </ul>
             </div>
         @endenv
@@ -147,7 +147,7 @@
     ============================================ --}}
 
     <section class="advanced-loops">
-        <h2>Product Categories</h2>
+        <h2>{{ __('Product Categories') }}</h2>
 
         {{-- Nested foreach with loop variables --}}
         @foreach ($categories as $category)
@@ -158,7 +158,7 @@
                 </h3>
 
                 @if ($loop->first)
-                    <p class="featured">⭐ Featured Category</p>
+                    <p class="featured">{{ __('⭐ Featured Category') }}</p>
                 @endif
 
                 {{-- Nested products --}}
@@ -171,10 +171,9 @@
 
                                 {{-- Access parent loop --}}
                                 <small>
-                                    Category: {{ $loop->parent->iteration }},
-                                    Product: {{ $loop->iteration }}
+                                    {{ __('Category:') }} {{ $loop->parent->iteration }}{{ __(', Product:') }} {{ $loop->iteration }}
                                     @if ($loop->parent->last && $loop->last)
-                                        <strong>(Last product in last category)</strong>
+                                        <strong>{{ __('(Last product in last category)') }}</strong>
                                     @endif
                                 </small>
 
@@ -191,12 +190,12 @@
                         @endforeach
                     </div>
                 @else
-                    <p class="text-muted">No products in this category</p>
+                    <p class="text-muted">{{ __('No products in this category') }}</p>
                 @endif
 
                 {{-- Remaining items indicator --}}
                 @if (!$loop->last)
-                    <small class="text-info">{{ $loop->remaining }} more categories</small>
+                    <small class="text-info">{{ $loop->remaining }} {{ __('more categories') }}</small>
                 @endif
             </div>
         @endforeach
@@ -214,13 +213,13 @@
                         <div class="item">
                             <img src="{{ $item->product->thumbnail }}" alt="{{ $item->product->name }}">
                             <span>{{ $item->product->name }}</span>
-                            <span>Qty: {{ $item->quantity }}</span>
+                            <span>{{ __('Qty:') }} {{ $item->quantity }}</span>
                         </div>
                     @endforeach
                 </div>
 
                 <div class="order-total">
-                    Total: ${{ number_format($order->total, 2) }}
+                    {{ __('Total: $') }}{{ number_format($order->total, 2) }}
                 </div>
             </div>
         @empty
@@ -228,9 +227,9 @@
                 <svg class="icon-empty-cart" width="100" height="100">
                     <circle cx="50" cy="50" r="40" stroke="#ccc" fill="none" stroke-width="2" />
                 </svg>
-                <h3>No Orders Yet</h3>
-                <p>Start shopping to see your orders here!</p>
-                <a href="{{ route('shop') }}" class="btn btn-primary">Browse Products</a>
+                <h3>{{ __('No Orders Yet') }}</h3>
+                <p>{{ __('Start shopping to see your orders here!') }}</p>
+                <a href="{{ route('shop') }}" class="btn btn-primary">{{ __('Browse Products') }}</a>
             </div>
         @endforelse
 
@@ -793,8 +792,8 @@
 
         @section('sidebar')
             <aside class="sidebar">
-                <h3>Default Sidebar</h3>
-                <p>This can be overridden in child views</p>
+                <h3>{{ __('Default Sidebar') }}</h3>
+                <p>{{ __('This can be overridden in child views') }}</p>
             </aside>
         @show
     </main>
@@ -824,7 +823,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; {{ date('Y') }} {{ config('app.name') }}. All rights reserved.</p>
+                <p>{{ __('&copy;') }} {{ date('Y') }} {{ config('app.name') }}{{ __('. All rights reserved.') }}</p>
 
                 {{-- Social media links --}}
                 <div class="social-links">

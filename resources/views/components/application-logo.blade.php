@@ -1,1 +1,1 @@
-<span class="text-xl font-bold">Mailbag</span>
+<span class="text-xl font-bold">{{ __('Mailbag') }}</span>

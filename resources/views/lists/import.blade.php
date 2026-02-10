@@ -9,15 +9,13 @@
             <div class="flex -mx-3 items-center mb-5">
                 <div class="flex-auto px-3">
                     <p>
-                        Add a list of email addresses below to import directly into this list,
-                        with each email address on its own line.
-                        Emails will be lower-cased upon entry.
+                        {{ __('Add a list of email addresses below to import directly into this list, with each email address on its own line. Emails will be lower-cased upon entry.') }}
                         <br>
-                        Be sure that these contacts have shown actual intent to subscribe to this content.
+                        {{ __('Be sure that these contacts have shown actual intent to subscribe to this content.') }}
                     </p>
                 </div>
                 <div class="px-3 text-right">
-                    <x-button>Import</x-button>
+                    <x-button>{{ __('Import') }}</x-button>
                 </div>
             </div>
 

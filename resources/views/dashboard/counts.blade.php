@@ -2,7 +2,7 @@
     <div>
         <div class="px-4 py-5 sm:p-6">
             <dt class="text-base font-normal text-gray-900">
-                Total Contacts
+                {{ __('Total Contacts') }}
             </dt>
             <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
                 <div class="flex items-baseline text-2xl font-medium text-indigo-600">
@@ -15,7 +15,7 @@
     <div>
         <div class="px-4 py-5 sm:p-6">
             <dt class="text-base font-normal text-gray-900">
-                Sends Created
+                {{ __('Sends Created') }}
             </dt>
             <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
                 <div class="flex items-baseline text-2xl font-medium text-indigo-600">
@@ -28,7 +28,7 @@
     <div>
         <div class="px-4 py-5 sm:p-6">
             <dt class="text-base font-normal text-gray-900">
-                Emails Sent
+                {{ __('Emails Sent') }}
             </dt>
             <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
                 <div class="flex items-baseline text-2xl font-medium text-indigo-600">
