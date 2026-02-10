@@ -10,8 +10,8 @@
         </form>
 
         <div class="pt-10 text-right">
-            <x-button-secondary-link href="{{ route('users.index') }}" class="mr-1">Cancel</x-button-secondary-link>
-            <x-button form="user-form">Save</x-button>
+            <x-button-secondary-link href="{{ route('users.index') }}" class="mr-1">{{ __('Cancel') }}</x-button-secondary-link>
+            <x-button form="user-form">{{ __('Save') }}</x-button>
         </div>
 
     </div>

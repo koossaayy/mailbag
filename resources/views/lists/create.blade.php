@@ -11,8 +11,8 @@
         </form>
 
         <div class="pt-10 text-right">
-            <x-button-secondary-link href="{{ route('lists.index') }}" class="mr-1">Cancel</x-button-secondary-link>
-            <x-button form="list-form">Save</x-button>
+            <x-button-secondary-link href="{{ route('lists.index') }}" class="mr-1">{{ __('Cancel') }}</x-button-secondary-link>
+            <x-button form="list-form">{{ __('Save') }}</x-button>
         </div>
 
     </div>

@@ -6,21 +6,21 @@
                     <div class="px-3 py-2 flex">
                         <div class="flex-auto">
                             <a href="{{ route('lists.show', compact('list')) }}">{{ $list->name }}</a> <br>
-                            <span class="text-sm text-gray-500">Subscribed {{ $list->pivot->created_at->format('Y-m-d') }}</span>
+                            <span class="text-sm text-gray-500">{{ __('Subscribed') }} {{ $list->pivot->created_at->format('Y-m-d') }}</span>
                         </div>
                         <div class="shrink pl-1">
                             <x-delete-dropdown :route="route('contacts.lists.remove', ['contact' => $contact])">
                                 <x-slot name="extraFields">
                                     <input type="hidden" name="lists[]" value="{{ $list->id }}">
                                 </x-slot>
-                                Are you sure you want to remove this list from this contact?
+                                {{ __('Are you sure you want to remove this list from this contact?') }}
                             </x-delete-dropdown>
                         </div>
                     </div>
                 @endforeach
             </div>
         @else
-            <p class="italic">This contact is not subscribed to any lists.</p>
+            <p class="italic">{{ __('This contact is not subscribed to any lists.') }}</p>
         @endif
     </div>
     <div class="flex-auto w-1/3 px-5">
@@ -33,7 +33,7 @@
                            multiple
                            class="block mt-1 w-full" id="lists" name="lists[]" required/>
             <div class="text-right pt-4">
-                <x-button>Add</x-button>
+                <x-button>{{ __('Add') }}</x-button>
             </div>
         </form>
     </div>

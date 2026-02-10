@@ -12,11 +12,11 @@
         </form>
 
         <div class="pt-10 text-right">
-            <x-button-secondary-link href="{{ route('lists.index') }}" class="mr-1">Cancel</x-button-secondary-link>
+            <x-button-secondary-link href="{{ route('lists.index') }}" class="mr-1">{{ __('Cancel') }}</x-button-secondary-link>
             <x-delete-dropdown :route="route('lists.destroy', ['list' => $list])">
-                Are you sure you want to delete this list?
+                {{ __('Are you sure you want to delete this list?') }}
             </x-delete-dropdown>
-            <x-button form="list-form">Save</x-button>
+            <x-button form="list-form">{{ __('Save') }}</x-button>
         </div>
 
     </div>

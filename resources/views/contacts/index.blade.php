@@ -9,7 +9,7 @@
                 <x-search-input/>
             </div>
             <div class="flex-auto px-5 text-right">
-                <x-button-secondary-link :href="route('contacts.create')">Create New</x-button-secondary-link>
+                <x-button-secondary-link :href="route('contacts.create')">{{ __('Create New') }}</x-button-secondary-link>
             </div>
         </div>
 
@@ -33,7 +33,7 @@
                         </x-status-pill>
                     </td>
                     <td class="table-cell text-sm text-right font-medium">
-                        <a href="{{ route('contacts.edit', ['contact' => $contact]) }}" class="link">Edit</a>
+                        <a href="{{ route('contacts.edit', ['contact' => $contact]) }}" class="link">{{ __('Edit') }}</a>
                     </td>
                 </tr>
             @endforeach

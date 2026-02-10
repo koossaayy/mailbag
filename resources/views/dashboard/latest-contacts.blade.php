@@ -7,7 +7,7 @@
                         {{ $contact->unsubscribed ? 'Unsubscribed' : 'Subscribed' }}
                     </div>
                     <a href="{{ route('contacts.edit', compact('contact')) }}" class="text-sm font-medium">{{ $contact->email }}</a>
-                    <div class="text-sm text-gray-500">On {{ $contact->lists_count }} {{ \Illuminate\Support\Str::plural('list', $contact->lists_count) }}</div>
+                    <div class="text-sm text-gray-500">{{ __('On') }} {{ $contact->lists_count }} {{ \Illuminate\Support\Str::plural('list', $contact->lists_count) }}</div>
                 </div>
             </div>
         @endforeach

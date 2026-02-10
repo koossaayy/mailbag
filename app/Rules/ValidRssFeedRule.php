@@ -5,7 +5,6 @@ namespace App\Rules;
 use App\Services\Rss\RssParser;
 use Closure;
 use Illuminate\Contracts\Validation\ValidationRule;
-
 class ValidRssFeedRule implements ValidationRule
 {
     /**
@@ -16,12 +15,10 @@ class ValidRssFeedRule implements ValidationRule
         if (app()->runningUnitTests()) {
             return;
         }
-
         $articles = (new RssParser())->getArticles($value);
         $isValid = !is_null($articles) && $articles->count() > 0;
-
         if (!$isValid) {
-            $fail('This provided feed URL does not point to a valid RSS feed.');
+            $fail(__('This provided feed URL does not point to a valid RSS feed.'));
         }
     }
 }

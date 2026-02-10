@@ -19,7 +19,7 @@
                 </x-status-pill>
             </td>
             <td class="table-cell text-sm text-right font-medium">
-                <a href="{{ route('contacts.edit', ['contact' => $contact]) }}" class="link">Edit</a>
+                <a href="{{ route('contacts.edit', ['contact' => $contact]) }}" class="link">{{ __('Edit') }}</a>
             </td>
         </tr>
     @endforeach

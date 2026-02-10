@@ -3,7 +3,7 @@
 
     <div class="container">
 
-        <x-subheading>Details</x-subheading>
+        <x-subheading>{{ __('Details') }}</x-subheading>
 
         <form action="{{ route('rss.update', ['campaign' => $feed->campaign, 'feed' => $feed]) }}" method="post" id="rss-form">
             {{ method_field('put') }}
@@ -14,11 +14,11 @@
         </form>
 
         <div class="pt-10 text-right">
-            <x-button-secondary-link href="{{ route('campaigns.show', ['campaign' => $feed->campaign]) }}" class="mr-1">Cancel</x-button-secondary-link>
+            <x-button-secondary-link href="{{ route('campaigns.show', ['campaign' => $feed->campaign]) }}" class="mr-1">{{ __('Cancel') }}</x-button-secondary-link>
             <x-delete-dropdown :route="route('rss.destroy', ['campaign' => $feed->campaign, 'feed' => $feed])">
-                Are you sure you want to delete this RSS Feed?
+                {{ __('Are you sure you want to delete this RSS Feed?') }}
             </x-delete-dropdown>
-            <x-button form="rss-form">Save</x-button>
+            <x-button form="rss-form">{{ __('Save') }}</x-button>
         </div>
 
     </div>

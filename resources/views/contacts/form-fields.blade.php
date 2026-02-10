@@ -17,8 +17,8 @@
                                 :checked="intval(old('unsubscribed', $contact->unsubscribed)) === 1"/>
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="unsubscribed" class="font-medium text-gray-700">Unsubscribed</label>
-                    <p class="text-gray-500">Will not be sent any emails at all</p>
+                    <label for="unsubscribed" class="font-medium text-gray-700">{{ __('Unsubscribed') }}</label>
+                    <p class="text-gray-500">{{ __('Will not be sent any emails at all') }}</p>
                 </div>
             </div>
         </div>

@@ -12,13 +12,13 @@
                 </x-status-pill>
             </td>
             <td class="table-cell text-sm ">
-                Every {{ $feed->send_frequency }} days <br>
-                <span class="text-gray-600">Last Checked {{ is_null($feed->last_reviewed_at) ? 'Never' : $feed->last_reviewed_at->diffForHumans() }}</span>
+                {{ __('Every') }} {{ $feed->send_frequency }} {{ __('days') }} <br>
+                <span class="text-gray-600">{{ __('Last Checked') }} {{ is_null($feed->last_reviewed_at) ? 'Never' : $feed->last_reviewed_at->diffForHumans() }}</span>
                 <br>
-                <span class="text-gray-600" title="{{ $feed->next_review_at }}">Next Due {{ $feed->next_review_at->diffForHumans() }}</span>
+                <span class="text-gray-600" title="{{ $feed->next_review_at }}">{{ __('Next Due') }} {{ $feed->next_review_at->diffForHumans() }}</span>
             </td>
             <td class="table-cell text-sm font-medium text-right">
-                <a href="{{ route('rss.edit', compact('campaign', 'feed')) }}" class="link">Edit</a>
+                <a href="{{ route('rss.edit', compact('campaign', 'feed')) }}" class="link">{{ __('Edit') }}</a>
             </td>
         </tr>
     @endforeach

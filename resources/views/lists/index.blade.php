@@ -9,7 +9,7 @@
                 <x-search-input/>
             </div>
             <div class="flex-auto px-5 text-right">
-                <x-button-secondary-link :href="route('lists.create')">Create New</x-button-secondary-link>
+                <x-button-secondary-link :href="route('lists.create')">{{ __('Create New') }}</x-button-secondary-link>
             </div>
         </div>
 
@@ -30,11 +30,11 @@
                         </x-status-pill>
                     </td>
                     <td class="table-cell text-sm font-medium text-right">
-                        <a href="{{ route('lists.show', compact('list')) }}" class="link">View</a>
+                        <a href="{{ route('lists.show', compact('list')) }}" class="link">{{ __('View') }}</a>
                         <span class="text-gray-500 px-1">|</span>
-                        <a href="{{ route('signup.show', compact('list')) }}" target="_blank" class="link">Signup Form</a>
+                        <a href="{{ route('signup.show', compact('list')) }}" target="_blank" class="link">{{ __('Signup Form') }}</a>
                         <span class="text-gray-500 px-1">|</span>
-                        <a href="{{ route('lists.edit', compact('list')) }}" class="link">Edit</a>
+                        <a href="{{ route('lists.edit', compact('list')) }}" class="link">{{ __('Edit') }}</a>
                     </td>
                 </tr>
             @endforeach

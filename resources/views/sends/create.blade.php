@@ -12,9 +12,9 @@
 
         <div class="pt-10 text-right">
             @if(request()->has('campaign'))
-                <x-button-secondary-link href="{{ route('campaigns.show', compact('campaign')) }}" class="mr-1">Cancel</x-button-secondary-link>
+                <x-button-secondary-link href="{{ route('campaigns.show', compact('campaign')) }}" class="mr-1">{{ __('Cancel') }}</x-button-secondary-link>
             @endif
-            <x-button form="send-form">Save</x-button>
+            <x-button form="send-form">{{ __('Save') }}</x-button>
         </div>
 
         @include('sends.content-syntax')

@@ -25,10 +25,9 @@
             @endif
 
             <p class="text-sm text-gray-700 mb-5">
-                You will receive an email to confirm you own the provided email address.
-                You will need to click through on this email and confirm your sign-up before you're actually subscribed.
+                {{ __("You will receive an email to confirm you own the provided email address. You will need to click through on this email and confirm your sign-up before you're actually subscribed.") }}
             </p>
-            <x-button class="w-full justify-center font-bold">Signup</x-button>
+            <x-button class="w-full justify-center font-bold">{{ __('Signup') }}</x-button>
         </form>
 
         <div class="mt-5 pt-5 border-t border-gray-300 text-sm text-gray-700 space-y-2">

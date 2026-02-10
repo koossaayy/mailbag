@@ -15,10 +15,10 @@
             <div class="flex">
                 <!-- Navigation Links -->
                 <div class="space-x-8 sm:-my-px sm:ml-10 flex">
-                    <x-nav-link :href="route('campaigns.index')" :active="request()->routeIs('campaigns.*')">Campaigns</x-nav-link>
-                    <x-nav-link :href="route('lists.index')" :active="request()->routeIs('lists.*')">Lists</x-nav-link>
-                    <x-nav-link :href="route('contacts.index')" :active="request()->routeIs('contacts.*')">Contacts</x-nav-link>
-                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">Users</x-nav-link>
+                    <x-nav-link :href="route('campaigns.index')" :active="request()->routeIs('campaigns.*')">{{ __('Campaigns') }}</x-nav-link>
+                    <x-nav-link :href="route('lists.index')" :active="request()->routeIs('lists.*')">{{ __('Lists') }}</x-nav-link>
+                    <x-nav-link :href="route('contacts.index')" :active="request()->routeIs('contacts.*')">{{ __('Contacts') }}</x-nav-link>
+                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">{{ __('Users') }}</x-nav-link>
                 </div>
             </div>
 

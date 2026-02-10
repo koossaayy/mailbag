@@ -19,8 +19,7 @@
         <!-- Template Send -->
         <x-label for="template_send_id" value="Template Send" />
         <p class="text-sm py-1 text-gray-600">
-            Select the send you want to use as a template.
-            When sending a new RSS update, the content and details will be copied from this send.
+            {{ __('Select the send you want to use as a template. When sending a new RSS update, the content and details will be copied from this send.') }}
         </p>
         <x-select-list id="template_send_id" class="block mt-1 w-full"
                        name="template_send_id"
@@ -35,8 +34,7 @@
         <!-- Send Frequency -->
         <x-label for="target_hour" value="Target Hour (24 hr)" />
         <p class="text-sm py-1 text-gray-600">
-            Set an hour to send the mail in. Not a guarantee but the system uses this as a target
-            so mail is sent around the same time each send.
+            {{ __('Set an hour to send the mail in. Not a guarantee but the system uses this as a target so mail is sent around the same time each send.') }}
         </p>
         <x-input id="target_hour"
                  class="block mt-1 w-full"
@@ -50,8 +48,7 @@
         <!-- Send Frequency -->
         <x-label for="send_frequency" value="Send Frequency (In Days)" />
         <p class="text-sm py-1 text-gray-600">
-            Choose how often you want to check for new RSS items.
-            This is effectively how often updates are sent assuming there's always new content.
+            {{ __("Choose how often you want to check for new RSS items. This is effectively how often updates are sent assuming there's always new content.") }}
         </p>
         <x-input id="send_frequency"
                  class="block mt-1 w-full"

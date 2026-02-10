@@ -3,7 +3,7 @@
 
     <div class="container">
 
-        <x-subheading>Details</x-subheading>
+        <x-subheading>{{ __('Details') }}</x-subheading>
 
         <form action="{{ route('contacts.update', ['contact' => $contact]) }}" method="post" id="contact-form">
             {{ method_field('put') }}
@@ -14,15 +14,15 @@
         </form>
 
         <div class="pt-10 text-right">
-            <x-button-secondary-link href="{{ route('contacts.index') }}" class="mr-1">Cancel</x-button-secondary-link>
+            <x-button-secondary-link href="{{ route('contacts.index') }}" class="mr-1">{{ __('Cancel') }}</x-button-secondary-link>
             <x-delete-dropdown :route="route('contacts.destroy', ['contact' => $contact])">
-                Are you sure you want to delete this contact?
+                {{ __('Are you sure you want to delete this contact?') }}
             </x-delete-dropdown>
-            <x-button form="contact-form">Save</x-button>
+            <x-button form="contact-form">{{ __('Save') }}</x-button>
         </div>
 
         <div class="border-t border-gray-300 mt-10">
-            <x-subheading>Lists</x-subheading>
+            <x-subheading>{{ __('Lists') }}</x-subheading>
             @include('contacts.lists')
         </div>
 
