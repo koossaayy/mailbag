@@ -217,6 +217,7 @@
     "Unsubscribe from all": "",
     "Unsubscribe from all emails sent from": "",
     "Unsubscribe not found": "",
+    "Unsubscribe: {{unsubscribe_link}}": "",
     "Unsubscribed": "",
     "Upcoming RSS Checks": "",
     "Updated every 5 seconds:": "",
@@ -259,6 +260,7 @@
     "or": "",
     "people on the": "",
     "storing your email address for the purposes of sending the above described content.": "",
+    "tag to indicate where the unsubscribe link should be placed.": "",
     "to": "",
     "with your email address please do not proceed to request or confirm this sign up.": "",
     "⭐ Featured Category": ""

@@ -217,6 +217,7 @@
     "Unsubscribe from all": "Unsubscribe from all",
     "Unsubscribe from all emails sent from": "Unsubscribe from all emails sent from",
     "Unsubscribe not found": "Unsubscribe not found",
+    "Unsubscribe: {{unsubscribe_link}}": "Unsubscribe: {{unsubscribe_link}}",
     "Unsubscribed": "Unsubscribed",
     "Upcoming RSS Checks": "Upcoming RSS Checks",
     "Updated every 5 seconds:": "Updated every 5 seconds:",
@@ -259,6 +260,7 @@
     "or": "or",
     "people on the": "people on the",
     "storing your email address for the purposes of sending the above described content.": "storing your email address for the purposes of sending the above described content.",
+    "tag to indicate where the unsubscribe link should be placed.": "tag to indicate where the unsubscribe link should be placed.",
     "to": "to",
     "with your email address please do not proceed to request or confirm this sign up.": "with your email address please do not proceed to request or confirm this sign up.",
     "⭐ Featured Category": "⭐ Featured Category"
