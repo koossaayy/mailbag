@@ -5,14 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>{{ __('Document') }}</title>
 </head>
 
 <body>
-    Hello World
-    maybe yes maybe no
-    #helloworld
-    FUCK
+    {{ __('Hello World maybe yes maybe no #helloworld FUCK') }}
 </body>
 
 </html>
