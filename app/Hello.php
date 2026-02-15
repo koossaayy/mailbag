@@ -1,5 +1,4 @@
 <?php
-
 namespace App;
 
 class Hello
@@ -11,6 +10,12 @@ class Hello
     public function maybe()
     {
         $hello = __('This one should trigger once only and thats it');
+        return $hello;
+    }
+
+    public function anotherone()
+    {
+        $hello = __('empire of sun is a really good song');
         return $hello;
     }
 }
