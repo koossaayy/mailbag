@@ -18,4 +18,10 @@ class Hello
         $hello = __('empire of sun is a really good song');
         return $hello;
     }
+
+    public function translations()
+    {
+        $hello = "Let's do some translation";
+        return $hello;
+    }
 }
