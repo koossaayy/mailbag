@@ -5,34 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>{{ __('Document') }}</title>
 </head>
 
 <body>
-    ANother thing
+    {{ __('ANother thing') }}
 
     <p>
-        I wanna a better body
+        {{ __('I wanna a better body') }}
     </p>
 
     <p>
-        Maybe yes maybe no
+        {{ __('Maybe yes maybe no') }}
     </p>
 
     <p>
-        For fuck sake just work please
+        {{ __('For fuck sake just work please') }}
     </p>
 
     <p>
-        For fuck sake just work please now please
+        {{ __('For fuck sake just work please now please') }}
     </p>
 
     <p>
-        Another one
+        {{ __('Another one') }}
     </p>
 
     <p>
-        And another one
+        {{ __('And another one') }}
     </p>
 
 
