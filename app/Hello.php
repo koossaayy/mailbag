@@ -1,4 +1,5 @@
 <?php
+
 namespace App;
 
 class Hello
@@ -12,22 +13,19 @@ class Hello
         $hello = __('This one should trigger once only and thats it');
         return $hello;
     }
-
     public function anotherone()
     {
         $hello = __('empire of sun is a really good song');
         return $hello;
     }
-
     public function translations()
     {
-        $hello = "Let's do some translation";
+        $hello = __("Let's do some translation");
         return $hello;
     }
-
     public function idiot()
     {
-        $hello = "I forgot the webhooks";
+        $hello = __("I forgot the webhooks");
         return $hello;
     }
 }
