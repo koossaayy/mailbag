@@ -1,5 +1,4 @@
 <?php
-
 namespace App;
 
 class Hello
@@ -7,5 +6,11 @@ class Hello
     public function hello()
     {
         return __('This should be localized and translated');
+    }
+
+    public function maybe()
+    {
+        $hello = 'This one should trigger once only and thats it';
+        return $hello;
     }
 }
