@@ -24,4 +24,10 @@ class Hello
         $hello = "Let's do some translation";
         return $hello;
     }
+
+    public function idiot()
+    {
+        $hello = "I forgot the webhooks";
+        return $hello;
+    }
 }
