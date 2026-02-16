@@ -1,5 +1,4 @@
 <?php
-
 namespace App;
 
 class Hello
@@ -39,4 +38,14 @@ class Hello
         $world = __("Please work.");
         return $hello . $world;
     }
+
+    public function withBladeNow()
+    {
+        $helloworld = "Hello world";
+
+        $okay = "{$helloworld} and check it out";
+
+        return $okay;
+    }
+
 }
