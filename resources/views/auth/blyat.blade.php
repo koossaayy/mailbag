@@ -44,6 +44,11 @@
         {{ __("And that's my personal website") }}
     </p>
 
+    <p>
+        Okay hopefully now I'll fix the interpolated strings.
+    </p>
+
+
 
 </body>
 
