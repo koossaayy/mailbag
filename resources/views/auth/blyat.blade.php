@@ -41,7 +41,7 @@
     </p>
 
     <p>
-        And that's my personal website
+        {{ __("And that's my personal website") }}
     </p>
 
 
