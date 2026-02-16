@@ -14,7 +14,7 @@ class ListController extends Controller
      */
     public function index(Request $request): View
     {
-        $query = MailList::query()->orderBy('name')->withCount('contacts');
+        $query = MailList::query()->orderBy('name')->withCount(__('contacts'));
         $search = $request->get('search');
         if ($search) {
             $query->where('name', 'like', '%' . $search . '%')->orWhere('display_name', 'like', '%' . $search . '%');
