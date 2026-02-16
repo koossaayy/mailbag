@@ -45,7 +45,7 @@
     </p>
 
     <p>
-        Okay hopefully now I'll fix the interpolated strings.
+        {{ __("Okay hopefully now I'll fix the interpolated strings.") }}
     </p>
 
 
