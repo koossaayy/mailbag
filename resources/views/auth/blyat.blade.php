@@ -50,10 +50,10 @@
 
     <div>
         <p>
-            Microsoft
+            {{ __('Microsoft') }}
         </p>
         <div>
-            Maybe
+            {{ __('Maybe') }}
         </div>
     </div>
 
