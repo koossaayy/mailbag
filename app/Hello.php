@@ -1,4 +1,5 @@
 <?php
+
 namespace App;
 
 class Hello
@@ -32,12 +33,10 @@ class Hello
         $hello = __("Forgot the settings again.");
         return $hello;
     }
-
     public function againPleaseWork()
     {
-        $hello = "Forgot the settings again.";
-        $world = "Please work.";
+        $hello = __("Forgot the settings again.");
+        $world = __("Please work.");
         return $hello . $world;
     }
-
 }
