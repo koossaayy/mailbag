@@ -1,5 +1,4 @@
 <?php
-
 namespace App;
 
 class Hello
@@ -25,7 +24,14 @@ class Hello
     }
     public function idiot()
     {
-        $hello = __("I forgot the webhooks");
+        $hello = "I forgot the webhooks";
         return $hello;
     }
+
+    public function forgotthesettings()
+    {
+        $hello = "Forgot the settings again.";
+        return $hello;
+    }
+
 }
